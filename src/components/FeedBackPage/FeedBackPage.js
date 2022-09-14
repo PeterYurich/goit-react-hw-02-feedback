@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import propTypes from 'prop-types';
 
 import { FeedBack } from './feed-back-styles.styled';
 import { Statistic } from './Statistic/Statistic';
@@ -15,7 +16,9 @@ export class FeedbackPage extends Component {
         positivePercentageInit: 0,
     }
 
-    // static propTypes = {}
+    static propTypes = {
+
+    }
 
     state = {
         good: this.props.goodInit,
@@ -67,22 +70,27 @@ export class FeedbackPage extends Component {
                 <Section title='Please leave feedback'
                 >
                     <FeedbackOption
-                        onGood={this.handleGood}
-                        onNeutral={this.handleNeutral}
-                        onBad={this.handleBad}
+                        options={[
+                            'Good', 'Neutral', 'Bad'
+                        ]}
+                        onLeaveFeedback={[
+                            this.handleGood,
+                            this.handleNeutral,
+                            this.handleBad
+                        ]}
                     />
                 </Section>
 
                 {this.state.total === 0 &&
-                <Notification message='There is no feedback'></Notification>}
+                    <Notification message='There is no feedback'></Notification>}
 
-                {this.state.total > 0 && 
-                <Section title='Statistics'>
-                    <Statistic
-                        good={this.state.good} neutral={this.state.neutral} bad={this.state.bad}
-                        total={this.state.total} positivePercentage={this.state.positivePercentage}
-                    />
-                </Section>}
+                {this.state.total > 0 &&
+                    <Section title='Statistics'>
+                        <Statistic
+                            good={this.state.good} neutral={this.state.neutral} bad={this.state.bad}
+                            total={this.state.total} positivePercentage={this.state.positivePercentage}
+                        />
+                    </Section>}
             </FeedBack>
         )
     }
