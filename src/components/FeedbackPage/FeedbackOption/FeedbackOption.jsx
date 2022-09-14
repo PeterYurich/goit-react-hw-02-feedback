@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ButtonList, Button } from '../feed-back-page.styled';
+import { ButtonList, Button } from '../feed-back-styles.styled';
 
 export const FeedbackOption = ({onGood, onNeutral, onBad}) => (
   <ButtonList>

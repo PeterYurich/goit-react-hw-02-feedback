@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 
-import { FeedBack } from './feed-back-page.styled';
+import { FeedBack } from './feed-back-styles.styled';
 import { Statistic } from './Statistic/Statistic';
 import { FeedbackOption } from './FeedbackOption/FeedbackOption';
-import { Section } from './Section/Section'
+import { Section } from './Section/Section';
+import { Notification } from './Notification/Notification';
 
 export class FeedbackPage extends Component {
     static defaultProps = {
@@ -64,7 +65,7 @@ export class FeedbackPage extends Component {
         return (
             <FeedBack>
                 <Section title='Please leave feedback'
-                    >
+                >
                     <FeedbackOption
                         onGood={this.handleGood}
                         onNeutral={this.handleNeutral}
@@ -72,13 +73,16 @@ export class FeedbackPage extends Component {
                     />
                 </Section>
 
+                {this.state.total === 0 &&
+                <Notification message='There is no feedback'></Notification>}
+
+                {this.state.total > 0 && 
                 <Section title='Statistics'>
                     <Statistic
                         good={this.state.good} neutral={this.state.neutral} bad={this.state.bad}
                         total={this.state.total} positivePercentage={this.state.positivePercentage}
                     />
-                </Section>
-
+                </Section>}
             </FeedBack>
         )
     }

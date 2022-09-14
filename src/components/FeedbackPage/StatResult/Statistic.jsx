@@ -1,8 +1,11 @@
-import React from 'react';
+import React, {Component} from 'react'
 
-import { StatResult } from '../feed-back-styles.styled';
+import { StatResult } from '../feed-back-styles.styled'
 
-export const  Statistic = ({good, neutral, bad, total, positivePercentage}) => (
+export class Statistic extends Component {
+
+    render() {
+        return (
     <StatResult>
         Good: {good}
         <br />
@@ -15,5 +18,6 @@ export const  Statistic = ({good, neutral, bad, total, positivePercentage}) => (
         Positive Feedback: {positivePercentage}%
     </StatResult>
     )
+}}
 
 

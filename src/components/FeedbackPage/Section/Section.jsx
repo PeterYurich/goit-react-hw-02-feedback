@@ -1,5 +1,5 @@
 import React from "react";
-import { Tittle } from "../feed-back-page.styled";
+import { Tittle } from "../feed-back-styles.styled";
 
 export const Section = ({title, children}) => (
     <div>
