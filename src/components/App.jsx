@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { FeedBackPage } from './FeedBackPage/FeedBackPage.js';
+import { FeedbackPage } from './FeedbackPage/FeedbackPage.js';
 
 export const App = () => {
   return (
     <>
-      <FeedBackPage> </FeedBackPage>
+      <FeedbackPage> </FeedbackPage>
     </>
   );
 };

@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 
-import { FeedBack, Tittle, ButtonList, Button, StatResult } from './feed-back-page.styled';
+import { FeedBack } from './feed-back-page.styled';
+import { Statistic } from './Statistic/Statistic';
+import { FeedbackOption } from './FeedbackOption/FeedbackOption';
+import { Section } from './Section/Section'
 
-export class FeedBackPage extends Component {
+export class FeedbackPage extends Component {
     static defaultProps = {
         goodInit: 0,
         neutralInit: 0,
         badInit: 0,
         totalInit: 0,
-        positiveInit: 0,
+        positivePercentageInit: 0,
     }
 
     // static propTypes = {}
@@ -18,13 +21,13 @@ export class FeedBackPage extends Component {
         neutral: this.props.neutralInit,
         bad: this.props.badInit,
         total: this.props.totalInit,
-        positive: this.props.positiveInit,
+        positivePercentage: this.props.positivePercentageInit,
     }
 
     handleGood = () => {
         this.setState(prevState => ({
             good: prevState.good + 1
-        }))
+        }));
         this.countTotalFeedback()
         this.countPositiveFeedbackPercentage()
     };
@@ -32,7 +35,7 @@ export class FeedBackPage extends Component {
     handleNeutral = () => {
         this.setState(prevState => ({
             neutral: prevState.neutral + 1
-        }))
+        }));
         this.countTotalFeedback()
         this.countPositiveFeedbackPercentage()
     }
@@ -40,7 +43,7 @@ export class FeedBackPage extends Component {
     handleBad = () => {
         this.setState(prevState => ({
             bad: prevState.bad + 1
-        }))
+        }));
         this.countTotalFeedback()
         this.countPositiveFeedbackPercentage()
     }
@@ -53,32 +56,29 @@ export class FeedBackPage extends Component {
 
     countPositiveFeedbackPercentage = () => {
         this.setState(prevState => ({
-            positive:  100 * (prevState.good / prevState.total)
+            positivePercentage: Math.round(100 * (prevState.good / prevState.total))
         }))
     }
 
     render() {
         return (
             <FeedBack>
-                <Tittle>Please leave feedback</Tittle>
-                <ButtonList>
-                    <Button onClick={this.handleGood} >Good</Button>
-                    <Button onClick={this.handleNeutral}>Neutral</Button>
-                    <Button onClick={this.handleBad}>Bad</Button>
-                </ButtonList>
-                <Tittle>Statistics</Tittle>
-                <StatResult good={this.good} neutral={this.neutral} bad={this.bad}
-                    total={this.total} positivePercentage={this.good / this.total}>
-                    Good: {this.state.good}
-                    <br />
-                    Neutral: {this.state.neutral}
-                    <br />
-                    Bad: {this.state.bad}
-                    <br />
-                    Total: {this.state.total}
-                    <br />
-                    Positive Feedback: {this.state.positive}%
-                </StatResult>
+                <Section title='Please leave feedback'
+                    >
+                    <FeedbackOption
+                        onGood={this.handleGood}
+                        onNeutral={this.handleNeutral}
+                        onBad={this.handleBad}
+                    />
+                </Section>
+
+                <Section title='Statistics'>
+                    <Statistic
+                        good={this.state.good} neutral={this.state.neutral} bad={this.state.bad}
+                        total={this.state.total} positivePercentage={this.state.positivePercentage}
+                    />
+                </Section>
+
             </FeedBack>
         )
     }
