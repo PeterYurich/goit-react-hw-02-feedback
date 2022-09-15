@@ -1,10 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { StatResult } from '../page-styles.styled';
-
 const  Statistic = ({good, neutral, bad, totalClicks, positivePercentage}) => (
-    <StatResult>
+    <div>
         Good: {good}
         <br />
         Neutral: {neutral}
@@ -14,7 +12,7 @@ const  Statistic = ({good, neutral, bad, totalClicks, positivePercentage}) => (
         Total: {totalClicks}
         <br />
         Positive Feedback: {positivePercentage}%
-    </StatResult>
+    </div>
     )
 
 Statistic.propTypes = {
