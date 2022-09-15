@@ -18,5 +18,4 @@ margin-right: 10px;
 text-transform: capitalize;
 `
 
-
 export { FeedBack, Tittle, ButtonList, Button }
