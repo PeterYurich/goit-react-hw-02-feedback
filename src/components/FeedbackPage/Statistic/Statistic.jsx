@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { StatResult } from '../feed-back-styles.styled';
+import { StatResult } from '../page-styles.styled';
 
 const  Statistic = ({good, neutral, bad, totalClicks, positivePercentage}) => (
     <StatResult>

@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import { Tittle } from "../feed-back-styles.styled";
+import { Tittle } from "../page-styles.styled";
 
 
 export const Section = ({title, children}) => (

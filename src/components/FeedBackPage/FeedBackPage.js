@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import {FeedBack} from './feed-back-styles.styled';
+import {FeedBack} from './page-styles.styled';
 import FeedbackOption from './FeedbackOption';
 import Notification from './Notification';
 import Section from './Section';

@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 )
 
 Notification.propTypes = {
-    message: PropTypes.string
+    message: PropTypes.string.isRequired
 }
 
 export default Notification

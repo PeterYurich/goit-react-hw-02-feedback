@@ -18,7 +18,4 @@ margin-right: 10px;
 text-transform: capitalize;
 `
 
-const StatResult = styled.p`
-`
-
-export { FeedBack, Tittle, ButtonList, Button, StatResult }
+export { FeedBack, Tittle, ButtonList, Button }
