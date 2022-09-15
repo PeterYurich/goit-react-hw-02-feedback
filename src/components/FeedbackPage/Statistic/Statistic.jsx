@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { StatResult } from '../feed-back-styles.styled';
 
-export const  Statistic = ({good, neutral, bad, totalClicks, positivePercentage}) => (
+const  Statistic = ({good, neutral, bad, totalClicks, positivePercentage}) => (
     <StatResult>
         Good: {good}
         <br />
@@ -25,3 +25,5 @@ Statistic.propTypes = {
     positivePercentage: PropTypes.number.isRequired
 
 }
+
+export default Statistic

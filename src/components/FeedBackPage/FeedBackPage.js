@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
-import { FeedBack } from './feed-back-styles.styled';
-import { Statistic } from './Statistic/Statistic';
-import { FeedbackOption } from './FeedbackOption/FeedbackOption';
-import { Section } from './Section/Section';
-import { Notification } from './Notification/Notification';
+import {FeedBack} from './feed-back-styles.styled';
+import FeedbackOption from './FeedbackOption';
+import Notification from './Notification';
+import Section from './Section';
+import Statistic from './Statistic';
 
 export class FeedbackPage extends Component {
     static defaultProps = {
