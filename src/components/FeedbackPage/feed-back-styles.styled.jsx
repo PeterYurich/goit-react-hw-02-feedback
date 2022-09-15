@@ -15,6 +15,7 @@ margin-bottom: 20px;
 
 const Button = styled.button`
 margin-right: 10px;
+text-transform: capitalize;
 `
 
 const StatResult = styled.p`
